@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sshagent(['mvnuser_jenkin']) {
+                sshagent(['mvnuser_jenkis']) {
     // scp <src_dir> user@tomcatserverip:/tomcat/webapps
     sh "scp -o StrictHostKeyChecking=no target/*.war mvnuser@52.90.174.106:/home/mvnuser/tomcat/webapps"
 }
