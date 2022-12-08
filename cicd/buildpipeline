@@ -13,7 +13,7 @@ pipeline {
             steps {
                 sshagent(['mvnuser_Jenkins_ID']) {
     // scp <src_dir> user@tomcatserverip:/tomcat/webapps
-    sh "scp -o StrictHostKeyChecking=no target/*.war mvnuser@35.171.157.77:/home/mvnuser/tomcat/webapps"
+    sh "scp -o StrictHostKeyChecking=no target/*.war mvnuser@3.83.246.119:/home/mvnuser/tomcat/webapps"
 }
             }
         }
