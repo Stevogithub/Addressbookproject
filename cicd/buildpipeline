@@ -4,9 +4,11 @@ pipeline {
       maven 'mymaven'
       }
     stages {
-        stage('Build') {
+        stage('scan and Build') {
             steps {
-                sh 'mvn clean package'
+            withSonarQubeEnv(InstallationName: "mysonarqube", credentials: "sonar-jenkins-token") {
+                sh 'mvn clean package sonar:sonar'
+      }
             }
         }
         stage('Deploy') {
